@@ -57,6 +57,9 @@ async function getChecked() {
   })
   const parsed = await data.json();
   errorMsg.innerHTML = `<code>${JSON.stringify(parsed, null, 2)}</code>`;
+  //добавила код ниже, чтоб при вводе правильной цифры - она добавлялась в сетку
+  if(parsed.valid&&document.getElementsByClassName(coordInput.value)[0].innerText==""){document.getElementsByClassName(coordInput.value)[0].innerText = valInput.value;}
+ 
 }
 
 
